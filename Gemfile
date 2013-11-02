@@ -29,7 +29,11 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'braintree'
 
-gem 'mysql2'
+group :production do
+  gem 'mysql2'
+end
+
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
