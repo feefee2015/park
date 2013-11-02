@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'braintree'
 
-group :production do
-  gem 'mysql2'
-end
+#group :production do
+#  gem 'mysql2'
+#end
 
 
 

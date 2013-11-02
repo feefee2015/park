@@ -19,10 +19,14 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
-    encoding: utf8
-    database:AWSEBRDSDatabase
-    username: ebroot
-    password: parking0
-    host: aa25ruiqpfh8ea.cbreoig2iv44.us-west-2.rds.amazonaws.com
-    port: 3306
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+  #  adapter: mysql2
+  #    encoding: utf8
+  #    database:AWSEBRDSDatabase
+  #    username: ebroot
+  #    password: parking0
+  #    host: aa25ruiqpfh8ea.cbreoig2iv44.us-west-2.rds.amazonaws.com
+  #    port: 3306
