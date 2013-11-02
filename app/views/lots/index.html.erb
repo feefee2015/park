@@ -1,0 +1,23 @@
+<h1>Hello, Rails!</h1>
+<%= link_to "My Lot", controller: "lots" %>
+<%= link_to 'New lot', new_lot_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @lots.each do |lot| %>
+      <tr>
+        <td><%= lot.id %></td>
+        <td><%= lot.created_at %></td>
+        <td><%= link_to 'Show', lots_path %></td>
+        <td><%= link_to 'Edit', edit_lot_path(lot) %></td>
+        <td><%= link_to 'Destroy', lot_path(lot),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
