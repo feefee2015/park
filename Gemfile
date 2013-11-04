@@ -28,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'braintree'
+gem 'geocoder'
 
 #group :production do
 #  gem 'mysql2'
