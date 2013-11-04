@@ -1,8 +1,8 @@
 Park::Application.routes.draw do
-  resources :merchants
 
-  post 'parkers/:id/pay' => 'parkers#pay'
 
+
+  resources :transactions,   :defaults => { :format => 'json' }
   resources :lots,   :defaults => { :format => 'json' }
   resources :parkers,  :defaults => { :format => 'json' }
   resources :merchants,   :defaults => { :format => 'json' }

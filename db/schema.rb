@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131031170337) do
+ActiveRecord::Schema.define(version: 20131103063654) do
 
   create_table "charges", force: true do |t|
     t.string   "rate"
@@ -74,5 +74,17 @@ ActiveRecord::Schema.define(version: 20131031170337) do
   end
 
   add_index "parkers", ["lot_id"], name: "index_parkers_on_lot_id"
+
+  create_table "transactions", force: true do |t|
+    t.float    "amount"
+    t.string   "status"
+    t.string   "transactionId"
+    t.string   "remarks"
+    t.integer  "parker_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transactions", ["parker_id"], name: "index_transactions_on_parker_id"
 
 end

@@ -1,1 +1,1 @@
-json.extract! @parker, :id, :plate, :vin, :start, :amountpaid, :slotid, :paymentinfo, :lot_id, :created_at, :updated_at
+json.extract! @parker, :id, :plate, :vin, :start, :slotid, :transactions, :lot_id

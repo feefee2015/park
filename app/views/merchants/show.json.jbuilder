@@ -1,1 +1,1 @@
-json.extract! @merchant, :created_at, :updated_at
+json.extract! @merchant, :id, :firstName, :lastName, :email, :birthday, :country, :state, :city, :street,  :unitnum, :zip, :phone, :merchantStatus, :merchantId, :ssn, :taxId,  :paymentinfo, :lots

@@ -1,1 +1,1 @@
-json.extract! @lot, :id, :latitude, :longitude, :name, :country, :state, :city, :street, :housenum, :unitnum, :zip, :phone, :bizid, :owner, :paymentinfo, :maxtime, :created_at, :updated_at, :parkers, :charge
+json.extract! @lot, :id, :latitude, :longitude, :name, :country, :state, :city, :street,  :unitnum, :zip,  :maxtime, :created_at, :updated_at, :parkers, :charge , :merchant_id
