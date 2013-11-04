@@ -4,7 +4,7 @@ class Lot < ActiveRecord::Base
   belongs_to :merchant
 
   geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+  after_validation :geocode
 
   private
   def address
