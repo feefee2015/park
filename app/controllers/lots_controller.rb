@@ -9,8 +9,7 @@ class LotsController < ApplicationController
       if params.has_key?(:min_latitude) && params.has_key?(:max_latitude)
         args[:latitude] = params[:min_latitude]..params[:max_latitude]
       end
-      @merchant = Merchant.find(params[:merchant_id])
-      @lots = @merchant.lots.where(args)
+      @lots = Lot.where(args)
       render template: 'lots/index', status: :ok
     rescue Exception => e
       Rails.logger.error("Encountered an error while indexing  #{e}")

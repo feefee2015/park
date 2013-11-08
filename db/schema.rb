@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103063654) do
+ActiveRecord::Schema.define(version: 20131108061355) do
 
   create_table "charges", force: true do |t|
     t.string   "rate"
@@ -56,9 +56,10 @@ ActiveRecord::Schema.define(version: 20131103063654) do
     t.string   "merchantId"
     t.string   "ssn"
     t.string   "taxId"
-    t.string   "paymentinfo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "account_number"
+    t.string   "route_number"
   end
 
   create_table "parkers", force: true do |t|
