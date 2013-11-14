@@ -3,13 +3,17 @@ class LotsController < ApplicationController
     begin
 
       args = params.select{|key,value| key.in?(Lot.column_names())}
-      if params.has_key?(:min_longitude) && params.has_key?(:max_longitude)
-        args[:longitude] = params[:min_longitude]..params[:max_longitude]
+      if params.has_key?(:nelat) && params.has_key?(:nelng) && params.has_key?(:swlat) && params.has_key?(:swlng)
+        lng = [params[:swlng], params[:nelng]]
+        lat = [params[:swlat], params[:nelat]]
+        args[:longitude] = lng.min..lng.max
+        args[:latitude] = lat.min..lat.max
       end
-      if params.has_key?(:min_latitude) && params.has_key?(:max_latitude)
-        args[:latitude] = params[:min_latitude]..params[:max_latitude]
+      if  params.has_key?(:curloc) && params.has_key?(:radius)
+        @lots = Lot.where(args).near(params[:curloc], params[:radius])
+      else
+        @lots = Lot.where(args)
       end
-      @lots = Lot.where(args)
       render template: 'lots/index', status: :ok
     rescue Exception => e
       Rails.logger.error("Encountered an error while indexing  #{e}")
